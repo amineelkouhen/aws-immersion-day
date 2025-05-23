@@ -133,7 +133,7 @@ For example, if you store items with associated store locations and product imag
 
 As a highly resilient distributed database, CockroachDB offers the technical foundations to store, index, and query vector embeddings. It allows developers to store vectors as easily as structured relational data. Then, the Vector Search capabilities provide advanced indexing and search capabilities required to perform low-latency search at scale, typically ranging from tens of thousands to hundreds of millions of vectors distributed across a cluster of machines.
 
-![](../assets/module1/CRDB vector.png)
+![](../assets/module1/CRDB-vector.png)
 
 CockroachDB’s support for the **pgvector** API enables smooth integration with popular AI frameworks like LangChain, Bedrock and Hugging Face, making it simple to incorporate real-time data into your machine learning workflows. This seamless compatibility positions CockroachDB as a powerful backend for Retrieval-Augmented Generation (RAG) systems, delivering fresh, scalable and consistent data to enrich AI-generated content, all that in the same database you already use for your relational and transactional data.
 
