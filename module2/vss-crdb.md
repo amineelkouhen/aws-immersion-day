@@ -185,7 +185,10 @@ For instance, if you search the yellow point, you will search green posting list
 
 ![](../assets/module2/before-spann.png)
 
-CockroachDB vector indexes organize vectors into a hierarchical structure of partitions using k-means clustering. This indexing method is based on SPANN, an efficient vector indexing and search system, that follows the inverted index methodology. It provides a hierarchical balanced clustering of vector.
+CockroachDB vector indexes organize vectors into a hierarchical structure of partitions using k-means clustering and automatically distributes them across many nodes to scale horizontally.
+This indexing method is based on SPANN, an efficient vector indexing and search system, that follows the inverted index methodology. It provides a hierarchical balanced clustering of vector.
+
+![](../assets/module2/vector_index_c-spann.png)
 
 In the figure below, the index iteratively partitions the vectors of a large cluster (yellow cluster) into a small number of small clusters (green clusters) until each cluster only contains limit number of vectors (blue clusters). Thus, it assigns boundary vectors (green points) to multiple closest clusters if its distances to these clusters are nearly the same (blue and yellow clusters).
 
