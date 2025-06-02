@@ -73,9 +73,8 @@ The diagram above illustrates a Retrieval-Augmented Generation (RAG) architectur
 
 The Banko App loads structured banking data from a Knowledge Base, which includes:
 
-Balance History (likely from an object store such as Amazon S3)
-
-Bank Statements in formats like PDF and CSV
+- Balance History (likely from an object store such as Amazon S3)
+- Bank Statements in formats like PDF and CSV
 
 This raw data is prepared for embedding.
 
