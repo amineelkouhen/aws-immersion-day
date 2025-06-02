@@ -9,11 +9,11 @@ This immersive workshop aims to equip participants with practical knowledge and 
 The repository is organized into the following modules:
 
 - module1: Basic Concepts
-  - Introduction to [CockroachDB](module1/part1-CockroachDB.md)
-  - [Generative AI, Large Language Models (LLMs), Vector Embeddings](module1/part2-Vecor-LLM.md) 
+  - [Introduction to CockroachDB](module1/part1-CockroachDB.md)
+  - [Generative AI, Large Language Models (LLMs), Vector Embeddings](module1/part2-Vector-LLM.md) 
   - [AWS Bedrock](module1/part3-Bedrock.md).
-- module2: Hands-on labs focusing on [Vector Similarity Search](module2/vss-crdb.md) with CockroachDB.
-- module3: [Retrieval Augmented Generation (RAG)](module3/RAG.md)  with CockroachDB and AWS Bedrock.
+- module2: Hands-on labs focusing on [Vector Similarity Search with CockroachDB](module2/vss-crdb.md).
+- module3: [Banko App - Retrieval Augmented Generation (RAG) with CockroachDB and AWS Bedrock](module3/RAG.md).
 
 ## 🚀 Getting Started
 

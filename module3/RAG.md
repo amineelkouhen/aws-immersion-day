@@ -1,4 +1,4 @@
-# Banko Assistant App
+# Banko App - Retrieval Augmented Generation (RAG) with CockroachDB and AWS Bedrock
 
 ## Overview
 The Banko Assistant is a banking application designed to offer a realistic use case of LLMs and how CockroachDB can integrate with AWS Bedrock to create a seamless and secure banking experiences to its users. Built with Python and Flask, this app leverages the powerful combination of LangChain with SQLToolkit for efficient interaction with CockroachDB, and integrates Large Language Model (LLM) functionalities from AWS Bedrock for an enhanced user experience. 
