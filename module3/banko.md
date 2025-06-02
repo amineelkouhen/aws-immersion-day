@@ -5,7 +5,7 @@ The Banko Assistant is a banking application designed to offer a realistic use c
 
 ### Banko Assistant App /Home
 
-The screenshot below depicts the home dashboard of the banking application. You can run this application locally at `<server_name>:3000/home`. In this main user dashboard, the application provides a consolidated view of financial data and activity. On the left side, a vertical sidebar serves as the primary navigation panel. It includes key sections such as Home, Savings Wallet, Credit Card, Statements, Banko Assistant, Benefits, and Settings. 
+The screenshot below depicts the home dashboard of the banking application. You can run this application locally at `http://<server_name>:3000/home`. In this main user dashboard, the application provides a consolidated view of financial data and activity. On the left side, a vertical sidebar serves as the primary navigation panel. It includes key sections such as Home, Savings Wallet, Credit Card, Statements, Banko Assistant, Benefits, and Settings. 
 
 The central area of the dashboard presents several widgets for financial overview - a pie chart labeled “Expenses by Category”, showing the user’s spending breakdown, and a Transactions widget displays recent activities.
 
@@ -15,7 +15,7 @@ The lower portion of the dashboard includes two graphical widgets: The Spend Ana
 
 ### Banko Assistant /Banko
 
-The Banko Assistant is a chatbot-style virtual assistant integrated into the Banko application. The page is located at the /banko route (`<server_name>:3000/banko`). 
+The Banko Assistant is a chatbot-style virtual assistant integrated into the Banko application. The page is located at the `/banko` route (`http://<server_name>:3000/banko`). 
 
 On the left-hand side, the consistent sidebar navigation remains visible, offering access to different banking features such as Home, Savings Wallet, Credit Card, Statements, Benefits, and Settings. Highlighted in the menu is Banko Assistant, which is the currently active view.
 
@@ -35,7 +35,7 @@ This assistant functionality relies on backend integration with the user’s acc
 - **Secure Session Management**: Maintains conversation history within user sessions
 - **Banking Dashboard**: Integrated with a comprehensive banking interface
 
-## Technical Stack
+## 🗂️ Technologies Used
 - **Backend**: Flask (Python)
 - **AI/ML**:
     - AWS Bedrock for LLM capabilities
@@ -43,7 +43,7 @@ This assistant functionality relies on backend integration with the user’s acc
     - Sentence Transformers for embeddings
     - OpenAI models
     - Open Source Models
-- **Database**: CockroachDB
+- **Database**: CockroachDB, Stores vector embeddings and serves as a scalable, consistent backend for secure, high-availability vector search.
 - **Frontend**: HTML, Tailwind CSS
 - **Cloud Infrastructure**: AWS
 
@@ -101,12 +101,6 @@ The retrieved context—such as balance information, transaction history, or sta
 
 #### E. Answer Generation
 The LLM processes the question along with the augmented context and responds with a helpful, domain-aware answer. For example: “To do X, you need to access your credit card statement via the Statements tab.”
-
-### 🗂️ Technologies Used
-- Amazon Bedrock + Claude 3.5: Provides embedding generation and LLM capabilities.
-- LangChain: Orchestrates the workflow between user input, embedding, retrieval, and generation.
-- CockroachDB: Stores vector embeddings and serves as a scalable, consistent backend for secure, high-availability vector search.
-- Banko App: Acts as the integration layer between the knowledge base, CRDB, and LLM services.
 
 ### ✅ Benefits of This Architecture
 - Domain-specific intelligence: Provides accurate, contextual financial answers tailored to user data.

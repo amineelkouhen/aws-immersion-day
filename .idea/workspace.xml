@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb8bdb1d-c2a2-4414-aae6-0405eaf8b9d9" name="Changes" comment="update CRDB indexing">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/module3/BankoAppHome.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/module3/BankoAssistant.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/module3/RAG-CRDB.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/module3/RAG.png" afterDir="false" />
+    <list default="true" id="bb8bdb1d-c2a2-4414-aae6-0405eaf8b9d9" name="Changes" comment="update Banko app">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module3/banko.md" beforeDir="false" afterPath="$PROJECT_DIR$/module3/banko.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,12 +93,29 @@
       <option name="project" value="LOCAL" />
       <updated>1748859392877</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update Banko app">
+      <option name="closed" value="true" />
+      <created>1748863950289</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1748863950289</updated>
+    </task>
+    <task id="LOCAL-00004" summary="update Banko app">
+      <option name="closed" value="true" />
+      <created>1748864531036</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1748864531036</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="adding partition vector index figure" />
     <MESSAGE value="update CRDB indexing" />
-    <option name="LAST_COMMIT_MESSAGE" value="update CRDB indexing" />
+    <MESSAGE value="update Banko app" />
+    <option name="LAST_COMMIT_MESSAGE" value="update Banko app" />
   </component>
 </project>
