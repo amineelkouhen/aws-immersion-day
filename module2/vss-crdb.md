@@ -210,7 +210,7 @@ Search accuracy is highly dependent on workload factors such as partition size, 
 
 Because a larger partition size leads to fewer partition splits and merges, it enables faster insert performance. So, to optimize writes, increase the partition size with `min_partition_size` and `max_partition_size`. A larger partition size leads to fewer partition splits and merges, resulting in faster insert performance.
 
-Once you have fine-tuned your vector index, the next EXPLAIN call demonstrates that the span scope is `LIMITED SCAN`. This indicates that the table will be scanned on a subset of key ranges of the index.
+Once you have fine-tuned your vector index, the next `EXPLAIN` call demonstrates that the span scope is `LIMITED SCAN` now. This indicates that the table will be scanned on a subset of the index key ranges.
 
 ```
                             info
@@ -231,4 +231,4 @@ Once you have fine-tuned your vector index, the next EXPLAIN call demonstrates t
             spans: LIMITED SCAN
 ```
 
-If you perform this example on a large dataset, you should also see that the estimated row count is around 10% of the table count.
+> **_NOTE:_** If you perform this example on a large dataset, you should also see that the estimated row count is around 10% of the table count.
