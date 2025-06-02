@@ -47,13 +47,11 @@ This assistant functionality relies on backend integration with the user’s acc
 - **Frontend**: HTML, Tailwind CSS
 - **Cloud Infrastructure**: AWS
 
-## Getting Started
+## Retrieval Augmented Generation (RAG)
 
 A domain-specific chatbot such as the Bank application is an intelligent conversational interface tailored to operate within a particular industry or functional area. Unlike general-purpose chatbots (like virtual assistants that answer broad questions), a domain-specific chatbot is optimized for a focused use case with personalized context. These chatbots are designed with specialized vocabulary, workflows, data integrations, and decision logic that align with the needs of a specific domain and within a specific context.
 
-Domain-specific chatbots rely on the concept of Retrieval Augmented Generation (RAG). 
-
-### Retrieval Augmented Generation (RAG)
+Domain-specific chatbots rely on the concept of Retrieval Augmented Generation (RAG). The strength of a domain-specific assistant using RAG like the Banko App is its ability to deliver high-value interactions while staying aligned with the operational goals of the banking system—speed, precision, user personalization, and compliance. As financial services continue to adopt AI-driven interfaces, domain-specific bots like this one become crucial tools for enhancing customer experience while automating routine queries.
 
 Retrieval Augmented Generation (RAG), within the scope of Large Language Models (LLMs), is a technique that combines the knowledge of domain-specific data and generative models to enhance the production of contextually-rich question responses. In essence, RAG functions by retrieving relevant information from a knowledge base of documents or data before proceeding to generate a response. This allows generalized foundation models to gain access to these data sources at runtime, and is NOT the same thing as fine-tuning.
 
@@ -67,7 +65,54 @@ Since Amazon Bedrock is serverless, you don't have to manage any infrastructure,
 
 ![](../assets/module3/RAG-CRDB.png)
 
-The strength of a domain-specific assistant using RAG like the Banko App is its ability to deliver high-value interactions while staying aligned with the operational goals of the banking system—speed, precision, user personalization, and compliance. As financial services continue to adopt AI-driven interfaces, domain-specific bots like this one become crucial tools for enhancing customer experience while automating routine queries.
+The diagram above illustrates a Retrieval-Augmented Generation (RAG) architecture for a domain-specific banking assistant powered by large language models (LLMs), vector search, and a CockroachDB (CRDB) vector database. The flow shows how the system processes user questions, retrieves relevant knowledge, and generates accurate, contextual answers using LLMs and structured bank data.
+
+### 🧠 Key Components and Flow Explanation
+
+#### Step 1: Load Data
+
+The Banko App loads structured banking data from a Knowledge Base, which includes:
+
+Balance History (likely from an object store such as Amazon S3)
+
+Bank Statements in formats like PDF and CSV
+
+This raw data is prepared for embedding.
+
+#### Step 2: Embed Data
+The Banko App sends this data to Amazon Bedrock, specifically using models like Anthropic Claude 3.5, to generate embeddings—dense vector representations of the data's semantic meaning.
+
+#### Step 3 & 4: Load Embeddings and Create Index
+Once generated, these embeddings are stored in a CockroachDB vector database, where the system also creates a vector index. This enables fast similarity searches to retrieve relevant content based on the meaning of incoming queries.
+
+### 💬 RAG Workflow with LangChain and LLM
+
+#### A. User Question
+A user asks a question like “How do I do X…?” through a chatbot interface powered by LangChain.
+
+#### B. Question Embedding
+The question is sent to Amazon Bedrock, where it is transformed into an embedding vector using the same model as before, ensuring alignment with the embedded documents.
+
+#### C. Context Retrieval
+The embedding of the question is used to perform a semantic search in the CRDB vector database, retrieving the most relevant chunks of banking knowledge.
+
+#### D. Response Augmentation
+The retrieved context—such as balance information, transaction history, or statement metadata—is added to the prompt and sent back to the LLM via LangChain. This step ensures that the LLM has the necessary context to generate accurate answers, even if it wasn't pre-trained on this specific data.
+
+#### E. Answer Generation
+The LLM processes the question along with the augmented context and responds with a helpful, domain-aware answer. For example: “To do X, you need to access your credit card statement via the Statements tab.”
+
+### 🗂️ Technologies Used
+- Amazon Bedrock + Claude 3.5: Provides embedding generation and LLM capabilities.
+- LangChain: Orchestrates the workflow between user input, embedding, retrieval, and generation.
+- CockroachDB: Stores vector embeddings and serves as a scalable, consistent backend for secure, high-availability vector search.
+- Banko App: Acts as the integration layer between the knowledge base, CRDB, and LLM services.
+
+### ✅ Benefits of This Architecture
+- Domain-specific intelligence: Provides accurate, contextual financial answers tailored to user data.
+- Strong consistency: CRDB ensures that access to financial data is correct and up-to-date.
+- Scalability and availability: Works across regions and remains resilient to infrastructure failures.
+- Seamless augmentation: Combines the reasoning of LLMs with the precision of structured data retrieval.
 
 ### Prerequisites
 - Python 3.8+
@@ -98,7 +143,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-5. Access the application at `http://localhost:3000/home`
+5. Access the application at `http://<server-name>:3000/home`
 
 ## Usage
 1. Navigate to the Banko Assistant section from the sidebar
